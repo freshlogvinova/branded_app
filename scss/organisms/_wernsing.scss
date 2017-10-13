@@ -1,0 +1,20 @@
+@import '../mixins';
+@import '../variables';
+
+.wernsing {
+  background-color: $wernsing-bcg;
+
+  .left-section,
+  .top {
+    color: $black;
+  }
+
+  .button {
+    background-color: $green;
+    color: $white;
+  }
+
+  .link {
+    color: $black;
+  }
+}

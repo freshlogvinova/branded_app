@@ -1,0 +1,80 @@
+@import '../mixins';
+@import '../variables';
+
+.left-section {
+  max-width: 300px;
+  padding-top: 16px;
+  width: 100%;
+
+  @include breakpoint(md) {
+    margin-left: 5rem;
+  }
+
+  @include breakpoint(lg) {
+    margin-left: 12rem;
+    max-width: 489px;
+
+    .hidden-sm {
+      width: 489px;
+    }
+  }
+
+  img {
+    margin-bottom: 24px;
+    width: 80px;
+  }
+
+  ul {
+    margin-bottom: 46px;
+    padding-left: 20px;
+  }
+
+  div {
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(md) {
+      text-align: left;
+    }
+
+    .button {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      line-height: 23px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+
+  p {
+    margin-top: 2rem;
+  }
+
+  .link {
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    a {
+      color: inherit;
+      font-size: 18px;
+      line-height: 18px;
+      text-decoration: none;
+    }
+  }
+}

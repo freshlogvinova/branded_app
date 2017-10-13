@@ -1,0 +1,60 @@
+@import '../mixins';
+@import '../variables';
+
+.body {
+
+  .admin {
+    padding-bottom: 30px;
+
+    @include breakpoint(md) {
+      padding-bottom: 0;
+    }
+  }
+
+  .section {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin: auto;
+    max-width: 1440px;
+    padding-top: 30px;
+
+    @include breakpoint(md) {
+      padding-top: 60px;
+    }
+
+    @include breakpoint(md) {
+      align-items: inherit;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .top {
+    padding-top: 30px;
+    text-align: center;
+
+    img {
+      height: 44px;
+      margin-bottom: 16px;
+      width: 44px;
+    }
+
+    div {
+      font-size: 36px;
+      font-weight: 300;
+      height: 72px;
+      line-height: 36px;
+      margin: auto;
+      opacity: .8;
+      text-align: center;
+      width: 305px;
+    }
+  }
+
+  .bar {
+    background: $green;
+    height: 18px;
+  }
+}

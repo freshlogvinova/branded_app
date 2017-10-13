@@ -1,0 +1,18 @@
+@import '../mixins';
+@import '../variables';
+
+.hidden-sm {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+}
+
+.hidden-md {
+  display: block;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}

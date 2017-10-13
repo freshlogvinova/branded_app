@@ -1,0 +1,20 @@
+@import '../mixins';
+@import '../variables';
+
+.opel {
+  background-color: $opel-bcg;
+
+  .left-section,
+  .top {
+    color: $white;
+  }
+
+  .button {
+    background-color: $yellow-tint;
+    color: $black;
+  }
+
+  .link {
+    color: $white;
+  }
+}

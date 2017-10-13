@@ -1,0 +1,53 @@
+@import '../mixins';
+@import '../variables';
+
+article {
+  left: 15rem;
+  position: absolute;
+  top: 44px;
+  width: 153px;
+
+  @include breakpoint(md) {
+    left: 181px;
+    top: 72px;
+    width: 249px;
+  }
+
+  .video {
+    background-color: $white;
+    height: 500px;
+    margin: 0 auto 10px;
+    max-width: 800px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    p {
+      font-size: 18px;
+    }
+
+    video {
+      border: 1px solid;
+      margin: 0 auto 10px;
+      max-width: 600px;
+    }
+
+    &.small {
+      height: 233px;
+      margin: auto;
+      position: absolute;
+      width: 100%;
+
+      @include breakpoint(md) {
+        height: 402px;
+      }
+
+      video {
+        max-width: 154px;
+
+        @include breakpoint(md) {
+          max-width: 249px;
+        }
+      }
+    }
+  }
+}

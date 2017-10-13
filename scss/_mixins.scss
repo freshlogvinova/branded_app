@@ -1,0 +1,30 @@
+@import 'variables';
+
+@mixin breakpoint($device) {
+  @if ($device == xs) {
+    // until 767
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  } @else if ($device == sm) {
+    // from 768px
+    @media only screen and (min-width: $screen-sm-min) {
+      @content;
+    }
+  } @else if ($device == md) {
+    // from 992px
+    @media only screen and (min-width: $screen-md-min) {
+      @content;
+    }
+  } @else if ($device == lg) {
+    // from 1200px - open end
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    }
+  } @else {
+    //custom breakpoint
+    @media only screen and (min-width: $device) {
+      @content;
+    }
+  }
+}

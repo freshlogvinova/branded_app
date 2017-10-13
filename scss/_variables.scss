@@ -1,0 +1,39 @@
+// =============================================================================
+// Colors (Base)
+// =============================================================================
+$white: #fff !global;
+$black: #000 !global;
+$grey: #757575 !global;
+$orange: #f6704d !global;
+$orange-dark: #f6764d !global;
+$light: #fffffe !global;
+$yellow: #efd53b !global;
+$yellow-dark: #f9b400 !global;
+$yellow-tint: #ffdf02 !global;
+$light-blue: #00a3da !global;
+$green: #289445 !global;
+
+$tchop-bcg: #f2f2f0 !global;
+$bvg-bcg: #4b4a46 !global;
+$group-bcg: #243d66 !global;
+$opel-bcg: #1a1a1a !global;
+$wernsing-bcg: #f3efe5 !global;
+$tchop-indigo: #43445b;
+$frame-background: #f2f2f0 !global !default;
+$text-dark: #212121 !global;
+
+// =============================================================================
+// Breakpoints
+// =============================================================================
+$screen-sm: 768px !global !default;
+$screen-sm-min: $screen-sm !global !default;
+$screen-tablet: $screen-sm-min !global !default;
+$screen-md: 992px !global !default;
+$screen-md-min: $screen-md !global !default;
+$screen-desktop: $screen-md-min !global !default;
+$screen-lg: 1200px !global !default;
+$screen-lg-min: $screen-lg !global !default;
+$screen-lg-desktop: $screen-lg-min !global !default;
+$screen-xs-max: ($screen-sm-min - 1) !global !default;
+$screen-sm-max: ($screen-md-min - 1) !global !default;
+$screen-md-max: ($screen-lg-min - 1) !global !default;

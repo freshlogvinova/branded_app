@@ -1,0 +1,36 @@
+@import '../mixins';
+@import '../variables';
+
+.right-section {
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(1430px) {
+    overflow: inherit;
+  }
+
+  .shadow {
+    left: 40px;
+    pointer-events: none;
+    position: absolute;
+    top: 3px;
+    width: 95px;
+
+    @include breakpoint(md) {
+      left: 4rem;
+      width: 155px;
+      z-index: 1;
+    }
+  }
+
+  img {
+    margin-left: 190px;
+    vertical-align: bottom;
+    width: 456px;
+
+    @include breakpoint(md) {
+      margin-left: 100px;
+      width: 740px;
+    }
+  }
+}

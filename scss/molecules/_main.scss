@@ -1,0 +1,27 @@
+@import '../mixins';
+@import '../variables';
+
+.container {
+  padding: 76px 0;
+
+  input {
+    margin: 20px 0;
+  }
+
+  .buttons-block {
+    margin: 40px 0;
+
+    .button {
+      font-size: 15px;
+      padding: 12px 17px;
+    }
+  }
+
+  .img-fullsize {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+  }
+}
+

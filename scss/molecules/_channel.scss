@@ -1,0 +1,34 @@
+@import '../mixins';
+@import '../variables';
+
+.channel-header {
+  align-items: center;
+  background: $frame-background;
+  box-shadow: 0 .5px 0 $black;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  z-index: 11;
+
+  .material-icons,
+  .channel-name {
+    margin-right: 10px;
+  }
+
+  .material-icons {
+    color: $tchop-indigo;
+  }
+
+  .channel-name {
+    font-size: 14px;
+    max-width: 160px;
+    overflow: hidden;
+    padding: 3px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+@import '../mixins';
+@import '../variables';
+
+.group {
+  background-color: $group-bcg;
+
+  .left-section,
+  .top {
+    color: $white;
+  }
+
+  .button {
+    background-color: $yellow-dark;
+    color: $white;
+  }
+
+  .link {
+    color: $white;
+  }
+}
