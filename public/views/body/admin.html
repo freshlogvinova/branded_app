@@ -1,10 +1,10 @@
 <div class="body tchop">
   <div class="section admin">
     <div class="left-section">
-      <form id="uploadForm"
-            enctype="multipart/form-data"
-            action="/download"
-            method="post">
+      <form id="uploadForm">
+            <!--enctype="multipart/form-data"-->
+            <!--method="post"-->
+            <!--action="/download">-->
 
         <div class="file-select">
           <input id="file" type="file" name="file" class="inputfile"/>
@@ -13,6 +13,7 @@
 
         <div>
           <p class="filename"></p>
+          <span id="status"></span>
         </div>
 
         <div class="container-select">
@@ -24,8 +25,7 @@
           </div>
         </div>
 
-        <input type="submit" value="Upload" name="submit"/>
-        <span id="status"></span>
+        <input id="submit" type="submit" value="Upload" name="submit"/>
       </form>
     </div>
     <div class="right-section">
