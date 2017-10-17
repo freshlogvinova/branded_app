@@ -4,9 +4,6 @@ angular.module('App')
           .when("/", {
             templateUrl: "/views/body/tchop.html"
           })
-          .when("/test", {
-            templateUrl: "/views/body/admin-test.html"
-          })
           .when("/admin", {
             templateUrl: "/views/body/admin.html"
           })
