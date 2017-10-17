@@ -3,41 +3,20 @@
 
 //sass-lint:disable-all
 .file-select {
-  .inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-
-    & + label {
-      font-size: 18px;
-      font-weight: 300;
-      color: $white;
-      background-color: $group-bcg;
-      display: inline-block;
-      width: 280px;
-      border-radius: 5px;
-      padding: 10px;
-    }
-  }
-
-  .inputfile:focus + label,
-  .inputfile + label:hover {
-    background-color: $light-blue;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
-  }
-
-  .inputfile + label {
-    cursor: pointer;
-  }
+  font-size: 18px;
+  font-weight: 300;
+  color: $white;
+  background-color: $group-bcg;
+  display: inline-block;
+  width: 280px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .container-select {
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   select {
     outline: 0;
@@ -45,8 +24,8 @@
     border: 0 !important;
     background: $group-bcg;
     background-image: none;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 42px;
     margin: 0;
     padding: 0 0 0 .5em;
     color: $white;
@@ -90,7 +69,7 @@
   }
 }
 
-input[type="submit"] {
+  .submit {
   color: $white;
   background-color: $group-bcg;
   display: inline-block;

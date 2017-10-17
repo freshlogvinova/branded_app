@@ -1,32 +1,29 @@
 <div class="body tchop">
   <div class="section admin">
     <div class="left-section">
-      <form id="uploadForm"
-            enctype="multipart/form-data"
-            action="/download"
-            method="post">
-
-        <div class="file-select">
-          <input id="file" type="file" name="file" class="inputfile"/>
-          <label for="file">Choose a file</label>
-        </div>
-
-        <div>
-          <p class="filename"></p>
-        </div>
-
-        <div class="container-select">
-          <label for="select">for page:</label>
-          <div class="select">
-            <select name="select" id="select">
-              <option ng-repeat="item in pages" value="{{item.id}}">{{item.name}}</option>
-            </select>
+          <div class="file-select">
+          <input id="file" class="inputfile" type="file" nv-file-select uploader="uploader"/><br/>
           </div>
-        </div>
-
-        <input type="submit" value="Upload" name="submit"/>
-        <span id="status"></span>
-      </form>
+            <ul>
+            <li ng-repeat="item in uploader.queue">
+              Name: <span ng-bind="item.file.name"></span> -  <span ng-repeat="object in fileObject" ng-if="object.file == item.file.name">
+                {{object.progress}} %
+              </span><br/>
+              <button class="submit" ng-click="item.upload()">upload</button>
+              <div class="container-select">
+                <label for="select">for page:</label>
+                  <select name="select"
+                          id="select"
+                          ng-init="data.selected = pages[0]"
+                          ng-options="item.name for item in pages track by item.id"
+                          ng-model="data.selected">
+                  </select>
+                </div>
+              <span class="status" ng-repeat="object in fileObject" ng-if="object.file == item.file.name">
+                {{object.message}}
+              </span>
+            </li>
+          </ul>
     </div>
     <div class="right-section">
       <img class="shadow" src="../assets/images/shadow.png" alt="Shadow">

@@ -1,1 +1,1 @@
-angular.module('App', ['ui.bootstrap', 'ngRoute']);
+angular.module('App', ['ui.bootstrap', 'ngRoute', 'angularFileUpload']);
