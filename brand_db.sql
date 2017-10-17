@@ -29,7 +29,7 @@ CREATE TABLE `items` (
   PRIMARY KEY (`id`),
   KEY `page` (`page`),
   CONSTRAINT `items_ibfk_1` FOREIGN KEY (`page`) REFERENCES `page` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'uploads/1508238032695_some.mp4',1),(2,'uploads/1508238060548_some.mp4',1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-17  4:22:57
+-- Dump completed on 2017-10-17  4:27:53
