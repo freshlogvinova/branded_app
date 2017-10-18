@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     sassLint = require('gulp-sass-lint'),
     watch = require('gulp-watch'),
-    data = require("gulp-data");
+    data = require("gulp-data"),
+    uglifyCss = require('gulp-uglifycss');
 
 //Compile scss to css with Autoprefixer
 gulp.task('sass', ['sass-lint'], function () {
@@ -20,8 +21,8 @@ gulp.task('sass', ['sass-lint'], function () {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(sourcemaps.write())
+      .pipe(uglifyCss())
       .pipe(gulp.dest('./public/style/'))
-      .pipe(concatCss('./public/style/style.css'))
       .pipe(concatCss('./public/style/style.css'))
 });
 
@@ -66,6 +67,17 @@ gulp.task('build', function(callback) {
       'assets',
       'sass',
       'watch',
+      callback
+  );
+});
+
+//Build prod
+gulp.task('build-prod', function(callback) {
+  runSequence(
+      'pre-clean',
+      'pre-clean-assets',
+      'assets',
+      'sass',
       callback
   );
 });
