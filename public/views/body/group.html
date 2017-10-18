@@ -47,9 +47,7 @@
         </div>
         <div class="video small">
           <video controls ng-repeat="item in items" ng-if="item.page == 2">
-            <source src="{{item.link}}" type='video/mp4'>
-            <source src="{{item.link}}" type="video/ogg">
-            <source src="{{item.link}}" type="video/webm">
+            <source ng-src="{{item.link}}">
           </video>
         </div>
       </article>
