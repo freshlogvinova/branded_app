@@ -2,37 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
-const multer = require('multer');
+const upload = require('./controller/uploads')
 const favicon = require('serve-favicon');
-const mysql = require('mysql');
+const rimraf = require('rimraf');
 
 //Connection to mysql
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: 'brand_db'
-});
+const connection = require('./controller/db_connect');
 
 //mimetype for upload files
 const mimetypeSuccess = ['video/mpeg', 'video/mp4', 'video/ogg', 'video/quicktime', 'video/webm', 'video/x-ms-wmv', 'video/x-flv', 'video/3gpp', 'video/3gpp2'];
 
 const app = express();
-
-const listener = app.listen(3001, function () {
-  console.log("Server is listening on localhost:" + listener.address().port);
-});
-
-// for upload files
-const storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, Date.now() + '_' + file.originalname);
-  }
-});
-const upload = multer({storage: storage}).single('file');
 
 connection.connect(function (err) {
   if (err) throw err;
@@ -81,11 +61,27 @@ app.use(bodyParser.json())
       }
     })
     .delete('/remove_video/:id', function (req, res) {
+      connection.query('SELECT * FROM items WHERE id= ?', [req.params.id], function (err, rows, fields) {
+        const path = rows[0].link;
+        if (err) {
+          console.log("ERROR", err)
+        }
+        else {
+          rimraf('./' + path, function () {
+            console.log("done");
+          });
+        }
+      });
+
       connection.query('DELETE FROM items WHERE id= ?', [req.params.id], function (err, result) {
         if (err) {
           console.log("ERROR", err)
         }
       });
     });
+
+const listener = app.listen(3001, function () {
+  console.log("Server is listening on localhost:" + listener.address().port);
+});
 
 module.exports = app;
