@@ -68,7 +68,7 @@ app.use(bodyParser.json())
         }
         else {
           rimraf('./' + path, function () {
-            console.log("done");
+            console.log("file was deleted");
           });
         }
       });
