@@ -7,7 +7,7 @@ node_modules/*
 npm-debug.log
 !.gitignore
 build
-upload
+uploads
 Gemfile.lock
 .DS_Store
 .idea/

@@ -25,4 +25,8 @@ angular.module('App')
           .when("/wernsing", {
             templateUrl: "/views/body/wernsing.html"
           })
+          .when("/404", {
+            templateUrl: "/views/body/404.html"
+          })
+          .otherwise({ redirectTo: '/404' });
       }]);

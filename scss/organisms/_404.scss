@@ -1,0 +1,12 @@
+@import '../mixins';
+@import '../variables';
+
+.error {
+  .video {
+    .error {
+      width: 100%;
+      margin: 20px 0 0;
+      height: auto;
+    }
+  }
+}

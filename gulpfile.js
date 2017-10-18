@@ -20,8 +20,9 @@ gulp.task('sass', ['sass-lint'], function () {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('./public/style/css/'))
-      .pipe(concatCss('./public/style/css/style.css'))
+      .pipe(gulp.dest('./public/style/'))
+      .pipe(concatCss('./public/style/style.css'))
+      .pipe(concatCss('./public/style/style.css'))
 });
 
 //SassLint

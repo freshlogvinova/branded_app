@@ -1,6 +1,7 @@
 {
   "name": "project",
   "version": "1.0.0",
+  "node": "6.9",
   "description": "",
   "main": "index.js",
   "scripts": {

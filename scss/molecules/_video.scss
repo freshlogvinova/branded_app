@@ -21,6 +21,14 @@ article {
     overflow-x: hidden;
     overflow-y: auto;
 
+    .delete-video {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 10px;
+      justify-content: space-between;
+    }
+
     p {
       font-size: 18px;
     }
