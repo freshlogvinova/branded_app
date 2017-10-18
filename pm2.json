@@ -1,0 +1,7 @@
+{
+  "name": "sales-pitch",
+  "script": "index.js",
+  "cwd": "",
+  "log_date_format" : "YYYY-MM-DDTHH:mm:ss.000",
+  "max_memory_restart": "300M"
+}
