@@ -86,13 +86,12 @@ app.use(bodyParser.json())
           else {
             rimraf('./' + path, function () {
               console.log("file was deleted");
+              connection.query('DELETE FROM items WHERE id= ?', [req.params.id], function (err, result) {
+                if (err) {
+                  console.log("ERROR", err)
+                }
+              });
             });
-          }
-        });
-
-        connection.query('DELETE FROM items WHERE id= ?', [req.params.id], function (err, result) {
-          if (err) {
-            console.log("ERROR", err)
           }
         });
       }
