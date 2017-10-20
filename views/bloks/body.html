@@ -9,10 +9,11 @@
         <img src="/images/{{data.logo}}" alt="Logo">
         <div class="serif big">{{data.title}}</div>
       </div>
-      <ul>
-        <li class="medium lucida">{{data.list | striptags(true) | escape | nl2br}}</li>
-      </ul>
-      <div class="btn" >
+      <div class="plus">
+        <p class="medium lucida">{{data.list | striptags(true) | escape | nl2br}}</p>
+      </div>
+
+      <div class="btn">
         <a class="button" style="background-color: {{data.btn_bck_color}}; color: {{data.btn_color}}"  href="{{data.link_to}}">{{data.btn_text}}</a>
       </div>
       <p class="link">or
