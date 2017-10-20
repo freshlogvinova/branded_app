@@ -35,6 +35,12 @@
     "pg": "^6.0.3",
     "rimraf": "^2.6.2",
     "run-sequence": "^2.2.0",
-    "serve-favicon": "^2.4.5"
+    "serve-favicon": "^2.4.5",
+    "url": "^0.11.0",
+    "nun": "0.1.13",
+    "nunjucks": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
