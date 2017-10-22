@@ -9,6 +9,54 @@
     @include breakpoint(md) {
       padding-bottom: 0;
     }
+
+    .style {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+      }
+
+      div {
+        margin: 0;
+      }
+    }
+
+    .list-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-section {
+      .old-logo {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 30px;
+          min-height: 30px;
+        }
+      }
+    }
+
+    .right-section {
+      .shadow {
+        @include breakpoint(md) {
+          left: 6rem;
+        }
+      }
+
+      article {
+        left: 24rem;
+
+        @include breakpoint(md) {
+          left: 18rem;
+        }
+      }
+    }
   }
 
   .section {

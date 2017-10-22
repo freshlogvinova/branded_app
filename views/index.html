@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/style/style.css" rel="stylesheet">
-  <meta charset="UTF-8">
-  <title>tchop</title>
+
+  <!--<meta charset="UTF-8">-->
+  <title>{{data.name}}</title>
 </head>
 <body>
 
@@ -14,10 +15,7 @@
 
 
 {% if error %}
-{% include "bloks/error.html" %}
-
-{% elif admin %}
-{% include "bloks/admin.html" %}
+{% include "bloks/404.html" %}
 
 {% else %}
 {% include "bloks/body.html" %}
@@ -25,5 +23,6 @@
 {% endif%}
 
 {% include "bloks/footer.html" %}
+
 </body>
 </html>

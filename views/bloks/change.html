@@ -1,0 +1,64 @@
+{% raw %}
+<div class="create-page">
+    <h3>Change the data</h3>
+    <div class="title">
+        <div>
+            <label for="select">Select the page</label>
+            <select name="select"
+                    id="select"
+                    ng-init="dataChange.selected = pages[0]"
+                    ng-options="item.name for item in pages track by item.id"
+                    ng-change="change()"
+                    ng-model="dataChange.selected">
+            </select>
+        </div>
+        <div class="old-logo">
+            <div>
+            <label for="logo">Logo:</label>
+            <input id="logo" type="file">
+            </div>
+            <div>
+                <p>The old one</p>
+                <img src="/images/{{dataOld.logo}}">
+            </div>
+        </div>
+    </div>
+    <div class="style">
+        <div>
+            <p>Background:</p>
+            <color-picker options="options" id="bck_color" ng-model="dataOld.bck_color"></color-picker>
+        </div>
+        <div>
+            <p>Text:</p>
+            <color-picker options="options" id="text_color" ng-model="dataOld.text_color"></color-picker>
+        </div>
+        <div>
+            <p>Button text:</p>
+            <color-picker options="options" id="bck_color" ng-model="dataOld.btn_color"></color-picker>
+        </div>
+        <div>
+            <p>Button background:</p>
+            <color-picker options="options" id="btn_bck_color" ng-model="dataOld.btn_bck_color"></color-picker>
+        </div>
+    </div>
+    <div class="content">
+        <div class="list-content">
+            <label for="title">Title:</label>
+            <textarea id="title">{{dataOld.title}}</textarea>
+        </div>
+        <div class="list-content">
+            <label for="list">List of advantages:</label>
+            <textarea id="list">{{dataOld.list}}</textarea>
+        </div>
+        <div>
+            <label for="link_to">Link to:</label>
+            <input id="link_to" value="{{dataOld.link_to}}" type="text">
+        </div>
+        <div>
+            <label for="btn_text">Text on the button:</label>
+            <input id="btn_text" value="{{dataOld.btn_text}}" type="text">
+        </div>
+    </div>
+    <button class="change" ng-click="change()">Change the page</button>
+</div>
+{% endraw %}

@@ -1,7 +1,6 @@
 node_modules/
 node_modules/*
 /node_modules/
-*.css
 .DS_store
 .idea
 npm-debug.log
@@ -10,11 +9,7 @@ build
 Gemfile.lock
 .DS_Store
 .idea/
-/dist/**/*
-/build/**/*
 *_scsslint_*.scss
-/backstop_data/*
-!/backstop_data/bitmaps_reference
 /sassdoc
+/assets/style
 .directory
-public/style/

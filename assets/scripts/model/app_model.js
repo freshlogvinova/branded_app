@@ -1,1 +1,1 @@
-angular.module('App', ['ui.bootstrap', 'ngRoute', 'angularFileUpload']);
+angular.module('App', ['angularFileUpload', 'color.picker']);

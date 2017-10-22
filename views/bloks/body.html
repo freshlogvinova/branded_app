@@ -1,6 +1,6 @@
 <div class="body" style="background-color: {{data.bck_color}}; color: {{data.text_color}}">
   <div class="top hidden-md">
-    <img src="/images/logo_tchop.png" alt="Logo">
+    <img src="/images/{{data.logo}}" alt="Logo">
     <div class="serif big">{{data.title}}</div>
   </div>
   <div class="section">
@@ -46,7 +46,7 @@
           <div>
             {% for item in video %}
             <video controls>
-              <source src="/uploads/{{item.link}}">
+              <source src="{{item.link}}">
             </video>
             {% endfor %}
           </div>
