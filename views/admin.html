@@ -23,7 +23,7 @@
   <meta charset="UTF-8">
   <title>tchop</title>
 </head>
-<body ng-controller="fileController">
+<body>
 
 <div class="header">
   <div class="right">
@@ -41,13 +41,13 @@
     <div class="section admin">
     <div class="left-section">
       <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
+        <div id="home" class="tab-pane fade in active" ng-controller="createController">
           {% include "bloks/createNew.html" %}
         </div>
-        <div id="menu1" class="tab-pane fade">
+        <div id="menu1" class="tab-pane fade" ng-controller="updateController">
           {% include "bloks/change.html" %}
         </div>
-        <div id="menu2" class="tab-pane fade">
+        <div id="menu2" class="tab-pane fade" ng-controller="fileController">
           {% include "bloks/upload.html" %}
         </div>
       </div>
@@ -78,7 +78,7 @@
           <span class="material-icons">settings</span>
         </div>
         {% raw %}
-        <div class="video small">
+        <div class="video small" ng-controller="fileController">
           <div ng-repeat="item in items">
             <div class="delete-video">
               <p ng-repeat="page in pages" ng-if="item.page == page.id">
@@ -139,6 +139,8 @@
 <!-- Script Angular-->
 <script src="/scripts/model/app_model.js"></script>
 <script src="/scripts/controllers/fileController.js"></script>
+<script src="/scripts/controllers/createController.js"></script>
+<script src="/scripts/controllers/updateController.js"></script>
 <script src="/scripts/other/angular-file-upload.js"></script>
 </body>
 </html>

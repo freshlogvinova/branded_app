@@ -3,7 +3,7 @@ angular.module('App')
 
         $http.get('/get_pages')
             .success(function (data, status) {
-                console.log(data, "PAGES");
+                console.log(data);
                 $scope.pages = data;
             })
             .error(function (data, status) {
@@ -12,41 +12,20 @@ angular.module('App')
 
         $http.get('/get_all_items')
             .success(function (data, status) {
-                console.log(data, "ITEMS");
+                console.log(data);
                 $scope.items = data;
             })
             .error(function (data, status) {
                 console.log(data);
             });
 
-        $scope.newPage = {
-            name: '',
-            logo: '',
-            styles: {
-                bck_color: '',
-                text_color: '',
-                btn_color: '',
-                btn_bck_color: ''
-            },
-            content: {
-                title: '',
-                list: '',
-                link_to: '',
-                btn_text: ''
-            }
-        };
-
         $scope.data = {
             pages: $scope.pages,
             selected: null
         };
 
-        $scope.dataChange = {
-            pages: $scope.pages,
-            selected: null
-        };
-
         $scope.fileObject = [];
+
         $scope.options = {
             // html attributes
             required: true,
@@ -58,14 +37,14 @@ angular.module('App')
             format: 'hexString',
             case: 'lower',
             // sliders
-            hue: false,
+            hue: true,
             saturation: true,
-            lightness: false, // Note: In the square mode this is HSV and in round mode this is HSL
-            alpha: false,
-            dynamicHue: false,
-            dynamicSaturation: false,
-            dynamicLightness: false,
-            dynamicAlpha: false,
+            lightness: true, // Note: In the square mode this is HSV and in round mode this is HSL
+            alpha: true,
+            dynamicHue: true,
+            dynamicSaturation: true,
+            dynamicLightness: true,
+            dynamicAlpha: true,
             // swatch
             swatch: true,
             swatchPos: 'left',
@@ -79,17 +58,6 @@ angular.module('App')
         };
 
 
-
-        $scope.change = function () {
-            $http.post('/get_options/' + $scope.dataChange.selected.id)
-                .success(function (data, status) {
-                    console.log(data, "GET OPTIONS");
-                    $scope.dataOld = data[0];
-                })
-                .error(function (data, status) {
-                    console.log(data);
-                });
-        };
         $scope.delete = function (item) {
             if (confirm("Are you sure?")) {
                 const index = $scope.items.indexOf(item);
@@ -106,11 +74,8 @@ angular.module('App')
                 return false
             }
         };
-        $scope.create = function () {
-            console.log($scope.newPage);
-        };
 
-        $scope.uploader = new FileUploader({
+      $scope.uploader = new FileUploader({
             url: '/upload',
             onAfterAddingFile: function (item) {
                 $scope.fileObject.push({file: item.file.name, message: "Don't upload yet", progress: 0});

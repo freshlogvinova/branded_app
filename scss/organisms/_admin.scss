@@ -1,0 +1,71 @@
+@import '../mixins';
+@import '../variables';
+
+.admin {
+  padding-bottom: 30px;
+
+  @include breakpoint(md) {
+    padding-bottom: 0;
+    min-height: 760px;
+  }
+
+  .style {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    p {
+      margin: 10px 0 5px;
+    }
+
+    div {
+      margin: 0;
+    }
+  }
+
+  .list-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-section {
+    h3 {
+      margin: 0 0 10px;
+    }
+
+    .old-logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 30px;
+        min-height: 30px;
+      }
+    }
+  }
+
+  .right-section {
+    @include breakpoint(md) {
+      bottom: -42px;
+    }
+
+    .shadow {
+      @include breakpoint(md) {
+        left: 6rem;
+      }
+    }
+
+    article {
+      left: 24rem;
+
+      @include breakpoint(md) {
+        left: 18rem;
+      }
+    }
+  }
+}

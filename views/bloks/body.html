@@ -10,7 +10,9 @@
         <div class="serif big">{{data.title}}</div>
       </div>
       <div class="plus">
-        <p class="medium lucida">{{data.list | striptags(true) | escape | nl2br}}</p>
+        {% for plus in list%}
+        <p class="medium lucida">{{plus}}</p>
+        {% endfor %}
       </div>
 
       <div class="btn">

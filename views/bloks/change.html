@@ -12,53 +12,62 @@
                     ng-model="dataChange.selected">
             </select>
         </div>
+        <div>
+            <label for="name">Name:</label>
+            <input ng-model="dataOld.name" id="name" type="text">
+        </div>
         <div class="old-logo">
             <div>
             <label for="logo">Logo:</label>
-            <input id="logo" type="file">
+            <input id="logo" type="file" ng-model="dataOld.logo">
             </div>
             <div>
-                <p>The old one</p>
-                <img src="/images/{{dataOld.logo}}">
+                <img src="/images/{{dataOld.logo}}" alt="&#8230;&#128247;&#8230;">
             </div>
         </div>
     </div>
     <div class="style">
         <div>
-            <p>Background:</p>
-            <color-picker options="options" id="bck_color" ng-model="dataOld.bck_color"></color-picker>
+            <p><b>Content styles</b></p>
+            <div>
+                <p>Background:</p>
+                <color-picker options="options" id="bck_color" ng-model="dataOld.bck_color"></color-picker>
+            </div>
+            <div>
+                <p>Text:</p>
+                <color-picker options="options" id="text_color" ng-model="dataOld.text_color"></color-picker>
+            </div>
         </div>
-        <div>
-            <p>Text:</p>
-            <color-picker options="options" id="text_color" ng-model="dataOld.text_color"></color-picker>
-        </div>
-        <div>
-            <p>Button text:</p>
-            <color-picker options="options" id="bck_color" ng-model="dataOld.btn_color"></color-picker>
-        </div>
-        <div>
-            <p>Button background:</p>
-            <color-picker options="options" id="btn_bck_color" ng-model="dataOld.btn_bck_color"></color-picker>
+
+        <div><p><b>Button styles</b></p>
+            <div>
+                <p>Text</p>
+                <color-picker options="options" id="btn_color" ng-model="dataOld.btn_color"></color-picker>
+            </div>
+            <div>
+                <p>Background</p>
+                <color-picker options="options" id="btn_bck_color" ng-model="dataOld.btn_bck_color"></color-picker>
+            </div>
         </div>
     </div>
     <div class="content">
         <div class="list-content">
             <label for="title">Title:</label>
-            <textarea id="title">{{dataOld.title}}</textarea>
+            <textarea id="title" ng-model="dataOld.title">{{dataOld.title}}</textarea>
         </div>
         <div class="list-content">
             <label for="list">List of advantages:</label>
-            <textarea id="list">{{dataOld.list}}</textarea>
+            <textarea id="list" ng-model="dataOld.list">{{dataOld.list}}</textarea>
         </div>
         <div>
             <label for="link_to">Link to:</label>
-            <input id="link_to" value="{{dataOld.link_to}}" type="text">
+            <input id="link_to"  ng-model="dataOld.link_to" value="{{dataOld.link_to}}" type="text">
         </div>
         <div>
             <label for="btn_text">Text on the button:</label>
-            <input id="btn_text" value="{{dataOld.btn_text}}" type="text">
+            <input id="btn_text"  ng-model="dataOld.btn_text" value="{{dataOld.btn_text}}" type="text">
         </div>
     </div>
-    <button class="change" ng-click="change()">Change the page</button>
+    <button class="change" ng-click="update()">Change the page</button>
 </div>
 {% endraw %}

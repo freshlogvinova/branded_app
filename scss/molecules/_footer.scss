@@ -52,6 +52,16 @@
         //sass-lint:disable nesting-depth
         &:first-child {
           margin-left: 0;
+
+          .soc-icon {
+             max-height: 15px;
+          }
+        }
+
+        &:nth-child(2) {
+          .soc-icon {
+            max-height: 17px;
+          }
         }
 
         &:nth-child(3) {
@@ -61,13 +71,13 @@
         }
 
         &:hover {
-          border-color: $white;
-          color: $orange;
+          background-color: $orange-hover;
+          color: $tchop-bcg;
         }
 
         .soc-icon {
           max-height: 18px;
-          max-width: 33px;
+          max-width: 40px;
         }
 
         svg {
