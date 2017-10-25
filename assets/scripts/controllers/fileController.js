@@ -57,6 +57,7 @@ angular.module('App')
             horizontal:  true
         };
 
+        $scope.now = Date.now();
 
         $scope.delete = function (item) {
             if (confirm("Are you sure?")) {
@@ -76,11 +77,13 @@ angular.module('App')
         };
 
       $scope.uploader = new FileUploader({
-            url: '/upload',
+            url: '/upload-video',
             onAfterAddingFile: function (item) {
                 $scope.fileObject.push({file: item.file.name, message: "Don't upload yet", progress: 0});
             },
             onBeforeUploadItem: function (item) {
+                $scope.logo =  $scope.now + '_' + item.file.name;
+                item.file.name =  $scope.newPage.logo;
                 item.formData = [{
                     select: $scope.data.selected.id
                 }];

@@ -11,18 +11,19 @@
 
   .right {
     display: flex;
-
-    @include breakpoint(md) {
-      margin-right: 12rem;
-    }
   }
 
   img {
-    width: 80px;
+    width: 100px;
+
+    @include breakpoint(md) {
+      width: 120px;
+    }
   }
 
   p {
     color: $grey;
     margin: auto;
+    opacity: .8;
   }
 }

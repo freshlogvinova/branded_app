@@ -19,6 +19,7 @@ angular.module('App')
         }
       };
 
+      $scope.now = Date.now();
 
       $scope.options = {
         // html attributes
@@ -50,30 +51,32 @@ angular.module('App')
         inline: false,
         horizontal: true
       };
-      $scope.createNew = function (item) {
-        console.log($scope.newPage)
-        item.upload();
-        // $http.post('/create', item.formData)
-        //     .success(function (data, status) {
-        //       console.log(data);
-        //     })
-        //     .error(function (data, status) {
-        //       console.log(data);
-        //     });
-      };
-      $scope.uploader = new FileUploader({
-        url: '/create',
-        formData: [{
-          name: $scope.newPage.name
-        }]
-      });
 
-      // $scope.uploader.onBeforeUploadItem = function(item) {
-      //   formData = [{
-      //     name: $scope.newPage
-      //   }];
-      //   Array.prototype.push.apply(item.formData, formData);
-      // };
-    });
+      $scope.createNew = function (item) {
+
+        if (item) {
+          $scope.newPage.logo = $scope.now + '_' + item.file.name;
+          item.upload();
+        }
+
+        $scope.newPage.name =  $scope.newPage.name.replace(' ', '_');
+        $http.post('/create', $scope.newPage)
+            .success(function (data, status) {
+              console.log(data);
+              $scope.pageCreate = data;
+              $scope.newPage = null;
+            })
+            .error(function (data, status) {
+              console.log(data);
+            });
+      };
+
+      $scope.uploader = new FileUploader({
+        url: '/upload-image',
+        onBeforeUploadItem: function(item) {
+          item.file.name =  $scope.newPage.logo;
+        }
+      });
+   });
 
  

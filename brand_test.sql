@@ -41,7 +41,7 @@ CREATE TABLE `contents` (
 
 LOCK TABLES `contents` WRITE;
 /*!40000 ALTER TABLE `contents` DISABLE KEYS */;
-INSERT INTO `contents` VALUES (1,'Your own news app for your employees','Reach out to your target group\nCurate what is important\nCombine internal with external contents\nLow maintenance costs with equal results\nTruly native app with your branding','mehr erfahren','https://tchop.io',1);
+INSERT INTO `contents` VALUES (1,'Your own news app for your employees','Reach out to your target group\nCurate what is important\nCombine internal with external contents\nLow maintenance costs with equal results\nTruly native app with your branding','request a demo','https://tchop.io',1);
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,16 +61,6 @@ CREATE TABLE `items` (
   CONSTRAINT `items_ibfk_1` FOREIGN KEY (`page`) REFERENCES `page` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `items`
---
-
-LOCK TABLES `items` WRITE;
-/*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'video.mp4',1),(2,'video.mp4',2),(3,'video2.mp4',1);
-/*!40000 ALTER TABLE `items` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `page`
@@ -93,7 +83,12 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'tchop','logo_tchop.png'),(2,'bvg','logo_bvg.png'),(3,'group','logo_tchop.png'),(4,'opel','logo_bvg.png'),(5,'unicef','logo_unicef.png'),(6,'wernsing','logo_wernsing.png');
+INSERT INTO `page` VALUES (1,'tchop','/images/logo_tchop.png'),
+(2,'bvg','/images/logo_bvg.png'),
+(3,'group','/images/logo_tchop.png'),
+(4,'opel','/images/logo_bvg.png'),
+(5,'unicef','/images/logo_unicef.png'),
+(6,'wernsing','/images/logo_wernsing.png');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +118,12 @@ CREATE TABLE `styles` (
 
 LOCK TABLES `styles` WRITE;
 /*!40000 ALTER TABLE `styles` DISABLE KEYS */;
-INSERT INTO `styles` VALUES (1,'#f2f2f0','#212121','#ffffff','#f6704d',1);
+INSERT INTO `styles` VALUES (1,'#f2f2f0','#212121','#ffffff','#f6704d',1),
+(2,'#4B4A46','#FFFFFF','#000000','#EFD53B',2),
+(3,'#243D66','#FFFFFF','#ffffff','#F9B400',3),
+(4,'#1A1A1A','#FFFFFF','#000000','#FFDF02',4),
+(5,'#f2f2f0','#212121','#ffffff','#00a3da',5),
+(6,'#f3efe5','#212121','#ffffff','#289445',6);
 /*!40000 ALTER TABLE `styles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

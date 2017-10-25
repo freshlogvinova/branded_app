@@ -2,23 +2,9 @@
 @import '../variables';
 
 .left-section {
-  max-width: 300px;
+  max-width: 320px;
   padding-top: 16px;
   width: 100%;
-
-
-  .plus {
-    padding-bottom: 46px;
-
-    p {
-      margin: 0;
-
-      &::before {
-        content: '\00B7';
-        padding-right: 10px;
-      }
-    }
-  }
 
   @include breakpoint(md) {
     margin-left: 5rem;
@@ -47,9 +33,40 @@
     margin-bottom: 16px;
   }
 
+  .plus {
+    padding-bottom: 46px;
+
+    p {
+      margin: 0;
+
+      @include breakpoint(md) {
+        font-size: 18px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 20px;
+      }
+
+      &::before {
+        content: '\00B7';
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .big {
+    @include breakpoint(md) {
+      font-size: 37px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 48px;
+    }
+  }
+
   .btn {
-    text-align: center;
     margin-bottom: 36px;
+    text-align: center;
     width: 100%;
 
     @include breakpoint(md) {
