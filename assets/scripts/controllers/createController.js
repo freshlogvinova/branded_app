@@ -14,7 +14,7 @@ angular.module('App')
         content: {
           title: '',
           list: '',
-          link_to: '',
+          link_to: 'tchop.io',
           btn_text: ''
         }
       };

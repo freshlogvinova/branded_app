@@ -63,6 +63,15 @@ CREATE TABLE `items` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `items`
+--
+
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `page`
 --
 
@@ -71,9 +80,10 @@ DROP TABLE IF EXISTS `page`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(4000) DEFAULT NULL,
+  `name` varchar(700) NOT NULL,
   `logo` varchar(4000) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,12 +93,7 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'tchop','/images/logo_tchop.png'),
-(2,'bvg','/images/logo_bvg.png'),
-(3,'group','/images/logo_tchop.png'),
-(4,'opel','/images/logo_bvg.png'),
-(5,'unicef','/images/logo_unicef.png'),
-(6,'wernsing','/images/logo_wernsing.png');
+INSERT INTO `page` VALUES (1,'tchop','/images/logo_tchop.png'),(2,'bvg','/images/logo_bvg.png'),(3,'group','/images/logo_tchop.png'),(4,'opel','/images/logo_bvg.png'),(5,'unicef','/images/logo_unicef.png'),(6,'wernsing','/images/logo_wernsing.png');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +114,7 @@ CREATE TABLE `styles` (
   PRIMARY KEY (`id_styles`),
   KEY `page` (`page`),
   CONSTRAINT `styles_ibfk_1` FOREIGN KEY (`page`) REFERENCES `page` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,12 +123,7 @@ CREATE TABLE `styles` (
 
 LOCK TABLES `styles` WRITE;
 /*!40000 ALTER TABLE `styles` DISABLE KEYS */;
-INSERT INTO `styles` VALUES (1,'#f2f2f0','#212121','#ffffff','#f6704d',1),
-(2,'#4B4A46','#FFFFFF','#000000','#EFD53B',2),
-(3,'#243D66','#FFFFFF','#ffffff','#F9B400',3),
-(4,'#1A1A1A','#FFFFFF','#000000','#FFDF02',4),
-(5,'#f2f2f0','#212121','#ffffff','#00a3da',5),
-(6,'#f3efe5','#212121','#ffffff','#289445',6);
+INSERT INTO `styles` VALUES (1,'#f2f2f0','#212121','#ffffff','#f6704d',1),(2,'#4B4A46','#FFFFFF','#000000','#EFD53B',2),(3,'#243D66','#FFFFFF','#ffffff','#F9B400',3),(4,'#1A1A1A','#FFFFFF','#000000','#FFDF02',4),(5,'#f2f2f0','#212121','#ffffff','#00a3da',5),(6,'#f3efe5','#212121','#ffffff','#289445',6);
 /*!40000 ALTER TABLE `styles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-20 17:34:15
+-- Dump completed on 2017-10-25 15:33:58
