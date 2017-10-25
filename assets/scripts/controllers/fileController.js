@@ -79,11 +79,10 @@ angular.module('App')
       $scope.uploader = new FileUploader({
             url: '/upload-video',
             onAfterAddingFile: function (item) {
+                item.file.name = $scope.now + '_' + item.file.name;
                 $scope.fileObject.push({file: item.file.name, message: "Don't upload yet", progress: 0});
             },
             onBeforeUploadItem: function (item) {
-                $scope.logo =  $scope.now + '_' + item.file.name;
-                item.file.name =  $scope.newPage.logo;
                 item.formData = [{
                     select: $scope.data.selected.id
                 }];
