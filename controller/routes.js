@@ -3,6 +3,7 @@ const multiparty = require('multiparty');
 const connection = require('./db_connect');
 const upload = require('./uploads');
 const url = require('url');
+const rimraf = require('rimraf');
 const router = express.Router();
 
 connection.connect(function (err) {
