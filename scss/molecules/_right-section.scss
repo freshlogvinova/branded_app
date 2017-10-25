@@ -2,11 +2,17 @@
 @import '../variables';
 
 .right-section {
+  align-items: flex-end;
+  display: flex;
   overflow: hidden;
   position: relative;
 
   @include breakpoint(1430px) {
     overflow: inherit;
+  }
+
+  .delete {
+    position: relative;
   }
 
   .shadow {
@@ -29,7 +35,7 @@
     width: 456px;
 
     @include breakpoint(md) {
-      margin-left: 100px;
+      margin-left: 150px;
       width: 740px;
     }
   }

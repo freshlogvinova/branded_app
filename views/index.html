@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/style/style.css" rel="stylesheet">
+
+  <!--<meta charset="UTF-8">-->
+  <title>{{data.name}}</title>
+  <style>
+    @font-face {
+      font-family: "SourceScansProLight";
+      src: url("/fonts/SourceSansProLight/SourceScansProLight.eot?") format("eot"),
+      url("/fonts/SourceSansProLight/SourceScansProLight.woff") format("woff"),
+      url("/fonts/SourceScansProLight/SourceScansProLight.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Lucida";
+      src: url("/fonts/Lucida/LucidaGrande.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "LucidaRoman";
+      src: url("/fonts/Lucida/LucidaEF_Roman.otf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Texta";
+      src: url("/fonts/Texta/SourceScansProLight.otf") format("truetype"),
+      url("/fonts/Texta/SourceScansProLight.woff") format("woff")
+    }
+
+    .serif {
+      font-family: SourceScansProLight, serif;
+    }
+
+    .lucida {
+      font-family: LucidaRoman, sans-serif;
+    }
+
+    .link,
+    .button {
+      font-family: Texta, sans-serif;
+    }
+
+    .header p {
+      font-family: Texta, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+{% include "bloks/base/header.html" %}
+
+
+{% if error %}
+{% include "bloks/404.html" %}
+
+{% else %}
+{% include "bloks/body.html" %}
+
+{% endif%}
+
+{% include "bloks/base/footer.html" %}
+
+</body>
+</html>

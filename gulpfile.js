@@ -22,8 +22,8 @@ gulp.task('sass', ['sass-lint'], function () {
       .pipe(sass().on('error', sass.logError))
       .pipe(sourcemaps.write())
       .pipe(uglifyCss())
-      .pipe(gulp.dest('./public/style/'))
-      .pipe(concatCss('./public/style/style.css'))
+      .pipe(gulp.dest('./assets/style/'))
+      .pipe(concatCss('./assets/style/style.css'))
 });
 
 //SassLint
@@ -41,30 +41,16 @@ gulp.task('watch', function () {
 
 //Pre clean styles
 gulp.task('pre-clean', function() {
-  return gulp.src('./public/styles/', {read: false})
+  return gulp.src('./assets/styles/', {read: false})
       .pipe(rimraf());
 });
 
-//Pre clean assets
-gulp.task('pre-clean-assets', function() {
-  return gulp.src('./public/assets/', {read: false})
-      .pipe(rimraf());
-});
-
-
-//Copy assets to build
-gulp.task('assets', function() {
-  return gulp.src('./assets/**/*')
-      .pipe(gulp.dest('./public/assets/'));
-});
 
 /************* build styles.css **************/
 //Build
 gulp.task('build', function(callback) {
   runSequence(
       'pre-clean',
-      'pre-clean-assets',
-      'assets',
       'sass',
       'watch',
       callback
@@ -75,8 +61,6 @@ gulp.task('build', function(callback) {
 gulp.task('build-prod', function(callback) {
   runSequence(
       'pre-clean',
-      'pre-clean-assets',
-      'assets',
       'sass',
       callback
   );

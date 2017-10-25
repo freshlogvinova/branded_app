@@ -10,10 +10,9 @@
   padding: 12px 30px;
   text-align: center;
   text-decoration: none;
-
   text-transform: uppercase;
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     font-size: 18px;
     padding: 12px 42px;
   }

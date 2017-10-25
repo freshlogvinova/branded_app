@@ -1,0 +1,181 @@
+@import '../mixins';
+@import '../variables';
+
+//sass-lint:disable-all
+.admin {
+  &.section {
+    padding-top: 30px;
+
+    @include breakpoint(md) {
+      min-height: 760px;
+      padding-bottom: 0;
+    }
+
+    .title-text {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+
+      a {
+        color: $black;
+        cursor: pointer;
+        font-weight: bold;
+        margin-left: 10px;
+        position: relative;
+        text-decoration: none;
+
+        //sass-lint:disable-all
+        &:hover {
+          color: $orange;
+
+          &::after {
+            content: 'delete the page';
+            font-size: 10px;
+            margin-left: -90px;
+            position: absolute;
+            text-align: center;
+            width: 200px;
+          }
+        }
+        //sass-lint:enable-all
+      }
+    }
+
+    //sass-lint:disable-all
+    form {
+      img {
+        width: 30px;
+
+      }
+    }
+    //sass-lint:enable-all
+
+    .section {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+      }
+    }
+
+    .tab-content {
+      width: 100%;
+    }
+
+    .create-page {
+      margin: auto;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .old-logo {
+      margin: 0;
+
+      & > div {
+        &:first-of-type {
+          display: flex;
+          flex-direction: column;
+          max-width: 300px;
+        }
+      }
+
+      div {
+        margin: 0;
+      }
+    }
+
+    .style {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+      }
+
+      p {
+        margin: 10px 0 5px;
+      }
+
+      div {
+        margin: 0;
+      }
+    }
+
+    .message {
+      color: $green;
+      font-weight: 300;
+    }
+
+    .change,
+    .create {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .title {
+      select {
+        font-size: 14px;
+        padding: 5px;
+      }
+    }
+
+    //sass-lint:disable-all
+    .change,
+    .create,
+    .title select {
+      font-size: 14px;
+      color: $white;
+      background-color: $group-bcg;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    //sass-lint:enable-all
+
+    .content > div,
+    .title > div {
+      margin: 10px 0;
+    }
+
+    .list-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-section {
+      h3 {
+        margin: 0 0 10px;
+      }
+
+      .old-logo {
+        align-items: center;
+        display: flex;
+
+        img {
+          min-height: 30px;
+          width: 30px;
+        }
+      }
+    }
+
+    .right-section {
+      .shadow {
+        @include breakpoint(md) {
+          left: 6rem;
+        }
+      }
+
+      article {
+        left: 24rem;
+
+        @include breakpoint(md) {
+          left: 231px;
+        }
+      }
+    }
+  }
+}
+//sass-lint:enable-all

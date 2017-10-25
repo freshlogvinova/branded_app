@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="/js/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+  <link href="/style/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/angularjs-color-picker.css"/>
+  <link rel="stylesheet" href="/css/angularjs-color-picker-bootstrap.css"/>
+  <script src="/js/tinycolor.js"></script>
+  <script src="/js/angularjs-color-picker.js"></script>
+  <meta charset="UTF-8">
+  <title>tchop</title>
+
+  <style>
+    @font-face {
+      font-family: "SourceScansProLight";
+      src: url("/fonts/SourceSansProLight/SourceScansProLight.eot?") format("eot"),
+      url("/fonts/SourceSansProLight/SourceScansProLight.woff") format("woff"),
+      url("/fonts/SourceScansProLight/SourceScansProLight.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Lucida";
+      src: url("/fonts/Lucida/LucidaGrande.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Texta";
+      src: url("/fonts/Texta/SourceScansProLight.otf?") format("otf"),
+      url("/fonts/Texta/SourceScansProLight.woff") format("woff")
+    }
+
+    .serif {
+      font-family: SourceScansProLight, sans-serif;
+    }
+
+    .lucida {
+      font-family: Lucida, sans-serif;
+    }
+
+    .link {
+      font-family: Texta, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+{% include "bloks/base/header.html" %}
+
+<div class="body tchop">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Create a new page</a></li>
+    <li><a data-toggle="tab" href="#menu1">Change the page</a></li>
+    <li><a data-toggle="tab" href="#menu2">Upload the video</a></li>
+  </ul>
+  <div class="section admin">
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active create-page">
+          {% include "bloks/admin/createNew.html" %}
+        </div>
+        <div id="menu1" class="tab-pane fade create-page">
+          {% include "bloks/admin/changePage.html" %}
+        </div>
+        <div id="menu2" class="tab-pane fade" ng-controller="fileController">
+          {% include "bloks/admin/upload.html" %}
+        </div>
+      </div>
+  </div>
+</div>
+
+{% include "bloks/base/footer.html" %}
+
+<script src="/js/ui-bootstrap-tpls.js"></script>
+<!-- Script Angular-->
+<script src="/scripts/model/app_model.js"></script>
+<script src="/scripts/controllers/fileController.js"></script>
+<script src="/scripts/controllers/createController.js"></script>
+<script src="/scripts/controllers/updateController.js"></script>
+<script src="/scripts/other/angular-file-upload.js"></script>
+</body>
+</html>

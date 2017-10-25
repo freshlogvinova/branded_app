@@ -2,7 +2,7 @@
 @import '../variables';
 
 .left-section {
-  max-width: 300px;
+  max-width: 320px;
   padding-top: 16px;
   width: 100%;
 
@@ -33,7 +33,39 @@
     margin-bottom: 16px;
   }
 
+  .plus {
+    padding-bottom: 46px;
+
+    p {
+      margin: 0;
+
+      @include breakpoint(md) {
+        font-size: 18px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 20px;
+      }
+
+      &::before {
+        content: '\00B7';
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .big {
+    @include breakpoint(md) {
+      font-size: 37px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 48px;
+    }
+  }
+
   .btn {
+    margin-bottom: 36px;
     text-align: center;
     width: 100%;
 
@@ -47,6 +79,10 @@
       letter-spacing: 5px;
       line-height: 23px;
       margin-bottom: 20px;
+
+      &:hover {
+        border: 1px solid $grey;
+      }
     }
 
     a {
@@ -54,11 +90,6 @@
         text-decoration: none;
       }
     }
-  }
-
-
-  p {
-    margin-top: 2rem;
   }
 
   .link {
