@@ -41,7 +41,7 @@ CREATE TABLE `contents` (
 
 LOCK TABLES `contents` WRITE;
 /*!40000 ALTER TABLE `contents` DISABLE KEYS */;
-INSERT INTO `contents` VALUES (1,'Your own news app for your employees','Reach out to your target group\nCurate what is important\nCombine internal with external contents\nLow maintenance costs with equal results\nTruly native app with your branding','request a demo','https://tchop.io',1);
+INSERT INTO `contents` VALUES (1,'Your own news app for your employees','Reach out to your target group\nCurate what is important\nCombine internal with external contents\nLow maintenance costs with equal results\nTruly native app with your branding','request a demo','tchop.io',1);
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 UNLOCK TABLES;
 
